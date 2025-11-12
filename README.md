@@ -1,6 +1,6 @@
 # PedestrianNoncomplianceAnalysis
 
-This repository contains all datasets, Python scripts, and resources used for the honours thesis titled **"To Cross, or Not to Cross: Pedestrian Non-Compliance Modelling at Signalised Intersections in Sydney"** by Keng Io Choy. The project investigates pedestrian non-compliant behaviour at signalised intersections using statistical and machine learning methods, including Multiple Logistic Regression (MLR) and Hazard-Based Modelling (HBM).
+This repository contains all datasets, Python scripts, and resources used for the honours thesis titled **"To Cross, or Not to Cross: Pedestrian Non-Compliance Modelling at Signalised Intersections in Sydney"**. The project investigates pedestrian non-compliant behaviour at signalised intersections using statistical and machine learning methods, including Multiple Logistic Regression (MLR) and Hazard-Based Modelling (HBM).
 
 ---
 
