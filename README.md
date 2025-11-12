@@ -9,13 +9,10 @@ This repository contains all datasets, Python scripts, and resources used for th
 - [Project Overview](#project-overview)
 - [Dataset](#dataset)
 - [Python Scripts](#python-scripts)
-- [Methods](#methods)
 - [Results and Figures](#results-and-figures)
 - [Requirements](#requirements)
 - [Usage](#usage)
-- [Citation](#citation)
 - [Acknowledgements](#acknowledgements)
-- [License](#license)
 
 ---
 
@@ -33,11 +30,7 @@ Pedestrian non-compliance at intersections can contribute to pedestrian-vehicle 
 ## Dataset
 
 The dataset includes:
-
 - **Pedestrian observations** (n = 2,004 pedestrians) from video recordings at three signalised intersections.
-- **Variables**: Gender, age, group size, phone usage, actuator use, running/jogging behaviour, crossing type, accepted gap, wait time, next vehicle type, and hard compliance indicator.
-
-> **Note:** Personal identifiers have been removed to protect privacy. Only anonymised and aggregated behavioural data is included.
 
 ---
 
@@ -45,14 +38,14 @@ The dataset includes:
 
 All Python scripts used in the project are included:
 
-1. `site_selection_yolo.py` – Setup for YOLO detection at intersections.
-2. `data_extraction_yolo.py` – Automated extraction of pedestrian coordinates, timestamps, and signals.
-3. `data_post_processing.py` – Cleaning, transforming, and merging YOLO outputs for analysis.
-4. `regression_analysis.py` – Multiple Logistic Regression (MLR) modelling for non-compliance.
-5. `hazard_modeling.py` – Cox proportional hazards modelling for temporal analysis.
-6. `figures_and_visualisation.py` – Generates figures, heatmaps, and plots for the thesis.
+1. `site_selection.ipynb` – Script for site selection process, used in conjunction with Transport for NSW datasets: NSW Road Crash Data - 2019-2023 - CRASH, NSW Road Crash Data - 2019-2023 - TRAFFIC UNIT. (https://opendata.transport.nsw.gov.au/data/dataset/nsw-crash-data)
+2. `walk_count_surveys.ipynb` – Script for pedestrian volume checks, used in conjunction with City of Sydney Walking Count dataset (https://data.cityofsydney.nsw.gov.au/datasets/cityofsydney::walking-count-surveys/about ) 
+3. `signal_vehicle_detection.ipynb` – Script for YOLO vehicle detection and signal detection, to apply to video surveys.
+4.  `bytetrack.yaml` – Bytetrack configuration for pedestrian detection.
+5. `pedestrian_detection_trial.ipynb` – Script for YOLO pedestrian detection, to apply to video surveys.
+6. `mlr_hbm_modelling.ipynb` – Cleaning, transforming, and merging YOLO outputs to final dataset for analysis. Variable correlation analysis, Multiple Logistic Regression (MLR) modelling for non-compliance and Cox proportional hazards modelling for temporal analysis (refer to csv files for regression modelling and hazard based modelling for thesis results).
 
----
+**Note: ** Remove and update file paths as required.
 
 ## Methods
 
@@ -67,7 +60,7 @@ All Python scripts used in the project are included:
 ## Requirements
 
 - Python 3.9.2
-- Required Python packages (install via pip):
+- Required Python packages:
 
 ```bash
 pip install -r requirements.txt
@@ -83,4 +76,29 @@ ultralytics
 ```
 
 ---
+
+## Usage
+1. Clone repository
+```bash
+git clone https://github.com/your-username/pedestrian-noncompliance.git
+cd pedestrian-noncompliance
+```
+
+2. Run scripts in the following order:
+```bash
+python site_selection_yolo.py
+python data_extraction_yolo.py
+python data_post_processing.py
+python regression_analysis.py
+python hazard_modeling.py
+python figures_and_visualisation.py
+```
+
+---
+
+## Acknowledgements
+Ultralytics YOLO for object detection framework.
+Python and its open-source libraries for data analysis.
+Transport for New South Wales for providing NSW crash data.
+AI tools used for code structure, statistical clarification, and grammar assistance are acknowledged in the thesis.
 
